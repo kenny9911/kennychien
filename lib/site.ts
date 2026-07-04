@@ -1,6 +1,7 @@
 /* Site-wide constants: canonical URL map, structured-data building blocks. */
 
-export const SITE_URL = "https://kennychien.com";
+/* www is the primary host in the Vercel domain config (apex 308s to it) — canonicals must match. */
+export const SITE_URL = "https://www.kennychien.com";
 export const SITE_NAME = "Kenny Chien";
 export const CONTACT_EMAIL = "kenny.chien@gmail.com";
 
