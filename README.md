@@ -2,73 +2,67 @@
 
 Personal site of Kenny Chien — enterprise AI consultant and educator for the agentic era (vibe coding, AI coding, agentic application development, FDE, agentic ontology).
 
-Implemented from the approved Claude Design handoff (`Kennychien.com.dc.html`): print-editorial / Bauhaus art direction — warm paper, ink black, vermillion accent, geometric "agent loop" hero, hard offset shadows, marquee strip.
+**Stack**: Next.js 16 (App Router) · React 19 · TypeScript (strict). Deployed on Vercel.
 
-## Features
+Design: print-editorial / Bauhaus art direction from the approved Claude Design handoff — warm paper, ink black, vermillion accent, geometric "agent loop" hero, hard offset shadows, marquee strip. The Vibe Teaming page keeps its own standalone field-manual design (signal orange, graph-paper texture), scoped so it can't leak into the rest of the site.
 
-- **8 home sections**: hero/about, consulting (hover-invert rows), products, coaching (ink band, 4 offerings), ideas, podcast, blog, contact (vermillion finale)
-- **Real, shareable pages**: every section links out to its own static page at a clean URL — `/consulting/ai-application-launch`, `/coaching/vibe-teaming`, `/products/ontology-canvas`, `/ideas/slop-is-a-choice`, `/podcast`, `/blog`, and so on (served via Vercel `cleanUrls`, no `.html` in URLs)
-- **Trilingual home**: working EN / 简体 / 繁體 switcher — all copy translated, font stacks swap to proper SC/TC, choice persists in `localStorage`, page title updates per language
-- **Consulting detail layouts**: full editorial pages (thesis, pull-quote, principles, engagement phases, outcomes, email CTA); legacy hash routes (`#/consulting/launch|ontology|fde`) still render in-app so old links keep working
-- **Kenny.AI chat** (✳ button, bottom right): live assistant briefed on Kenny's services, replies in the active language; backed by `api/chat.js`
-- **SEO/GEO**: per-page titles/descriptions/canonicals, semantic markup, hreflang on the home page, JSON-LD (Person, WebSite, Service, Article, PodcastSeries, FAQPage on landings), `sitemap.xml` + `robots.txt` that explicitly welcomes AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended), and a full no-JS `<noscript>` site directory on the home page
-- Contact email is composed at runtime so email-obfuscation rewriters can't mangle the mailto link
+## Pages — every page is a real, shareable URL
+
+| Route | Content |
+|---|---|
+| `/` | Trilingual home (EN / 简体 / 繁體 switcher, persists in `localStorage`) with all eight sections + Kenny.AI chat |
+| `/consulting` | Consulting landing: services, methodology, technologies, use cases, trends |
+| `/consulting/ai-application-launch` · `/agentic-ontology` · `/forward-deployed-engineering` | Service detail pages |
+| `/coaching` | Coaching landing (4 offerings) |
+| `/coaching/vibe-teaming` | **Vibe Teaming** — AI-native execution methodology (中文, standalone design) |
+| `/coaching/executive-coaching` · `/vibe-coding-bootcamp` · `/team-workshops` | Coaching area pages |
+| `/products` + 5 child pages | Product landing pages (honest pre-launch state, email CTAs) |
+| `/ideas` + 4 essay pages | Ideabrowser-style idea explainers |
+| `/podcast` | The Agentic Hour — YouTube-style episode card grid |
+| `/blog` | Field notes landing; features the Token → Business Outcome essay |
+| `/blogs/token_business_outcome_final_premium` | Legacy standalone essay (static file in `public/`, served via rewrite) |
 
 ## Structure
 
 ```
-index.html          static head (SEO/meta/fonts) + app shell + noscript site directory
-vercel.json         cleanUrls, no trailing slash, legacy redirects
-robots.txt          all crawlers allowed (AI crawlers explicitly), sitemap pointer
-sitemap.xml         every page URL (home, landings, detail pages)
-assets/styles.css   design system + responsive breakpoints
-assets/i18n.js      all trilingual copy + per-item page URLs
-assets/app.js       rendering, language switching, hash routing, chat
-api/chat.js         Kenny.AI serverless endpoint (Vercel-style, OpenRouter-backed)
-consulting/         consulting landing + 3 service detail pages
-coaching/           coaching landing + 4 offering pages (incl. Vibe Teaming, zh-CN)
-products/           products landing + 5 product pages
-ideas/              ideas landing + 4 essay pages
-podcast/            podcast landing (The Agentic Hour)
-blog/               blog landing
-blogs/              standalone blog artifacts
+app/                    App Router routes (one folder per clean URL)
+  layout.tsx            fonts, metadata template, globals.css
+  page.tsx              home (server shell) → components/home/* (client)
+  api/chat/route.ts     Kenny.AI endpoint (OpenRouter-backed)
+  sitemap.ts robots.ts  generated /sitemap.xml + /robots.txt
+  globals.css           kc- design system
+components/             SiteNav, SiteFooter, Breadcrumb, JsonLd, DetailCta, ChatWidget, home/*
+lib/site.ts             canonical URL map, schema.org Person, breadcrumb builder
+lib/i18n.ts             trilingual home copy (typed)
+public/blogs/           standalone blog artifacts
 ```
 
-No build step — plain HTML/CSS/JS. All internal links are absolute clean URLs (`/coaching/vibe-teaming`, never `.html`).
+## SEO / GEO
+
+- Unique title/description, exact canonical, OG/Twitter tags on every route (Next Metadata API)
+- JSON-LD on every page: Person, Service, Course, Product/Book/SoftwareApplication, Article, PodcastSeries, Blog/BlogPosting, BreadcrumbList, FAQPage (only where visible FAQs exist)
+- Answer-first openings, visible breadcrumbs, FAQ sections, dense internal cross-linking
+- `robots.ts` explicitly welcomes AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended); full `sitemap.xml`
+- Everything server-rendered — content is crawlable without JavaScript
 
 ## Run locally
 
 ```sh
-# static site only (chat shows its graceful error message)
-python3 -m http.server 8080
-
-# with the chat endpoint
-vercel dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # production build
+npm run typecheck  # tsc --noEmit
 ```
 
 ## Deploy
 
-Deploy to Vercel (or any static host + one serverless function):
+Deploy to Vercel (`vercel`). Environment variables:
 
-```sh
-vercel
-```
-
-Set environment variables in the Vercel project:
-
-- `OPENROUTER_API_KEY` — required for Kenny.AI chat (key already in local `.env`)
+- `OPENROUTER_API_KEY` — required for Kenny.AI chat (key in local `.env`)
 - `CHAT_MODEL` — optional, defaults to `anthropic/claude-sonnet-4.6`
-
-## Intentional deviations from the design prototype
-
-- Responsive breakpoints below ~1080px (the prototype was only verified at ≥ ~920px)
-- `:focus-visible` vermillion outline and a `prefers-reduced-motion` block that stills the marquee/ring/pulse animations — accessibility hardening
-- The chat input is focused when the panel is opened (user-initiated dialog focus)
-- Detail pages live at hash routes (`#/consulting/…`) so they are deep-linkable and the back button works
-- Detail-page visits append the page name to `document.title`
 
 ## Notes / next steps
 
-- Episode, blog-post, and product copy is the approved placeholder draft from the design — swap in real material as it exists
-- Social links are visual-only until real URLs exist; product/coaching/idea cards now link to their real pages
-- A headshot in the about section would strengthen it (per the design notes)
+- Podcast episodes and most product CTAs are honest pre-launch placeholders — swap in real URLs as they exist
+- Backend expansion planned; the chat route handler is the only server code today
+- Pre-React static implementation is preserved in git history (commit `fd4f5b6`)
