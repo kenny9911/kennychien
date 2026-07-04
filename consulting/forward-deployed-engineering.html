@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forward Deployed Engineering (FDE) Services — Kenny Chien</title>
+  <meta name="description" content="Forward deployed engineering (FDE): Kenny Chien embeds with your engineers, ships agentic software against real data and systems, and leaves a team that ships.">
+  <link rel="canonical" href="https://kennychien.com/consulting/forward-deployed-engineering">
+  <meta property="og:site_name" content="Kenny Chien">
+  <meta property="og:title" content="Forward Deployed Engineering (FDE) Services — Kenny Chien">
+  <meta property="og:description" content="Forward deployed engineering (FDE): Kenny Chien embeds with your engineers, ships agentic software against real data and systems, and leaves a team that ships.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kennychien.com/consulting/forward-deployed-engineering">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://kennychien.com/consulting/forward-deployed-engineering","name":"Forward Deployed Engineering","serviceType":"Embedded Engineering Consulting","url":"https://kennychien.com/consulting/forward-deployed-engineering","description":"Embedded, hands-on engagement in the Palantir-honed forward deployed engineering (FDE) model: pairing inside the client team, shipping agentic software against real data, and transferring capability so velocity holds after the embed ends.","provider":{"@type":"Person","name":"Kenny Chien","url":"https://kennychien.com","jobTitle":"Enterprise AI Consultant"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://kennychien.com/"},{"@type":"ListItem","position":2,"name":"Consulting","item":"https://kennychien.com/consulting"},{"@type":"ListItem","position":3,"name":"Forward Deployed Engineering","item":"https://kennychien.com/consulting/forward-deployed-engineering"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is forward deployed engineering (FDE)?","acceptedAnswer":{"@type":"Answer","text":"Forward deployed engineering is a delivery model, honed at Palantir, in which engineers embed inside the customer's team and ship working software as the means of consulting. The deliverable is a system in production and a team that can run it — not a recommendations deck."}},{"@type":"Question","name":"How is an FDE embed different from staff augmentation?","acceptedAnswer":{"@type":"Answer","text":"A contractor adds hands; an FDE embed transfers capability. Every pull request is a teaching artifact and every review a transfer of taste, with explicit exit criteria: your team's velocity holds after I rotate out."}},{"@type":"Question","name":"Is the embed remote or on-site?","acceptedAnswer":{"@type":"Answer","text":"Wherever your team works. The embed runs inside your repos, standups, and incident channel, which works fully remotely; on-site time is scoped per engagement when it genuinely helps. Either way, the first working change lands in production in week one."}}]}]}</script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23161512'/%3E%3Ccircle cx='32' cy='32' r='17' fill='%23DF4A1E'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .kc-crumb { font-family: var(--fm); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; opacity: .7; margin: 0 0 8px; }
+    .kc-crumb a { color: var(--ink); text-decoration: none; }
+    .kc-crumb a:hover { color: var(--verm); }
+    .kc-faq { margin-top: 18px; }
+    .kc-faq-item { border-top: 1px solid var(--hair); padding: 26px 4px; }
+    .kc-faq-q { font-family: var(--fd); font-weight: 900; font-size: 21px; margin: 0; line-height: 1.25; }
+    .kc-faq-a { margin: 12px 0 0; font-size: 15.5px; line-height: 1.7; opacity: .85; max-width: 840px; text-wrap: pretty; }
+    .kc-faq-a a { color: var(--verm); text-decoration: underline; text-underline-offset: 3px; }
+    .kc-rel { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 28px; margin-top: 64px; border-top: 2px solid var(--ink); padding-top: 22px; }
+    .kc-rel-label { font-family: var(--fm); font-size: 10px; letter-spacing: .16em; color: var(--verm); }
+    .kc-rel a { font-family: var(--fm); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+    .kc-rel a:hover { color: var(--verm); }
+    @media (max-width: 680px) {
+      .kc-faq-item { padding: 20px 2px; }
+      .kc-faq-q { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="kc-nav">
+    <a class="kc-logo" href="/">KENNY CHIEN<b>.</b></a>
+    <div class="kc-nav-links">
+      <a class="kc-nav-link" href="/#about">About</a>
+      <a class="kc-nav-link" href="/consulting">Consulting</a>
+      <a class="kc-nav-link" href="/products">Products</a>
+      <a class="kc-nav-link" href="/coaching">Coaching</a>
+      <a class="kc-nav-link" href="/ideas">Ideas</a>
+      <a class="kc-nav-link" href="/podcast">Podcast</a>
+      <a class="kc-nav-link" href="/blog">Blog</a>
+    </div>
+    <a class="kc-nav-cta" href="/#contact">Get in touch</a>
+  </nav>
+
+  <main>
+    <article class="kc-detail">
+      <p class="kc-crumb"><a href="/">KENNY CHIEN</a> / <a href="/consulting">CONSULTING</a> / FORWARD DEPLOYED ENGINEERING</p>
+
+      <div class="kc-detail-metarow">
+        <span class="kc-detail-idx">/02.3</span>
+        <span class="kc-detail-meta">EMBEDDED · HANDS-ON · PALANTIR-HONED PRACTICE</span>
+      </div>
+      <h1 class="kc-detail-title">Forward Deployed Engineering</h1>
+      <p class="kc-detail-sub">The consulting model is broken. The fix is engineers who deploy forward — into your team, your data, your production.</p>
+
+      <div class="kc-detail-intro">
+        <p>Forward Deployed Engineering is the practice Palantir built its delivery model on: instead of writing recommendations from the outside, engineers embed inside the customer, live with the real data and the real users, and ship working software as the means of consulting. The deliverable is not a deck — it is a system in production and a team that can run it.</p>
+        <p>I run FDE engagements on that playbook, adapted for the agentic era: embedded in your sprint cadence, pairing with your engineers, turning every deployment into training. The measure of success is what your team ships after I leave.</p>
+      </div>
+
+      <div class="kc-pull"><p>“Slideware is a promise. A go-live is a fact.”</p></div>
+
+      <div class="kc-detail-h"><i></i><h2>The FDE playbook</h2></div>
+      <div class="kc-prin-grid">
+        <div class="kc-prin"><span class="kc-prin-n">01</span><div><h3 class="kc-prin-t">Deploy into the problem</h3><p class="kc-prin-d">Work happens where the data and users are — your repos, your meetings, your on-call. Understanding earned on the inside beats interviews from the outside.</p></div></div>
+        <div class="kc-prin"><span class="kc-prin-n">02</span><div><h3 class="kc-prin-t">Two hats: delivery and feedback</h3><p class="kc-prin-d">Palantir splits the role: engineers who bend the platform to today's customer problem, and engineers who feed what they learn back into the product. We run the same loop — every workaround becomes a roadmap item.</p></div></div>
+        <div class="kc-prin"><span class="kc-prin-n">03</span><div><h3 class="kc-prin-t">Ship against real data</h3><p class="kc-prin-d">No synthetic demos. The first week ends with software touching your actual systems behind your actual permissions — that is where every hard problem lives.</p></div></div>
+        <div class="kc-prin"><span class="kc-prin-n">04</span><div><h3 class="kc-prin-t">Ontology-first integration</h3><p class="kc-prin-d">Following Palantir's core lesson: integrate meaning, not just data. Model the business objects and actions once, and every later application inherits them.</p></div></div>
+        <div class="kc-prin"><span class="kc-prin-n">05</span><div><h3 class="kc-prin-t">Go-lives over slideware</h3><p class="kc-prin-d">Progress is measured in working deployments and trained operators — never in decks delivered.</p></div></div>
+      </div>
+
+      <div class="kc-detail-h"><i></i><h2>How an embed runs</h2></div>
+      <div class="kc-phases">
+        <div class="kc-phase"><span class="kc-phase-w">WEEK 1</span><h3 class="kc-phase-t">Immerse</h3><p class="kc-phase-d">Inside your repos, standups, and incident channel. First working change in production by Friday — small, but real.</p></div>
+        <div class="kc-phase"><span class="kc-phase-w">WEEKS 2–6</span><h3 class="kc-phase-t">Ship &amp; pair</h3><p class="kc-phase-d">Agentic features delivered in your cadence, always pairing. Every PR is a teaching artifact; every review, a transfer of taste.</p></div>
+        <div class="kc-phase"><span class="kc-phase-w">WEEKS 7–8</span><h3 class="kc-phase-t">Hand over</h3><p class="kc-phase-d">I rotate out of the critical path. Your engineers lead; I review. Exit criteria: velocity holds after I am gone.</p></div>
+      </div>
+
+      <div class="kc-detail-h"><i></i><h2>What you walk away with</h2></div>
+      <div class="kc-out-grid">
+        <div class="kc-out"><i>→</i><p>Production features shipped inside your own codebase and stack</p></div>
+        <div class="kc-out"><i>→</i><p>Engineers fluent in agentic patterns — by building, not by workshop</p></div>
+        <div class="kc-out"><i>→</i><p>An integration layer and conventions the next team inherits</p></div>
+        <div class="kc-out"><i>→</i><p>A delivery culture that measures go-lives, not decks</p></div>
+      </div>
+
+      <div class="kc-rel">
+        <span class="kc-rel-label">RELATED</span>
+        <a href="/ideas/the-fde-mindset">The FDE mindset</a>
+        <a href="/consulting/ai-application-launch">AI Application Launch</a>
+        <a href="/consulting">All consulting services</a>
+      </div>
+
+      <div class="kc-detail-h"><i></i><h2>Frequently asked questions</h2></div>
+      <div class="kc-faq">
+        <div class="kc-faq-item">
+          <h3 class="kc-faq-q">What is forward deployed engineering (FDE)?</h3>
+          <p class="kc-faq-a">Forward deployed engineering is a delivery model, honed at Palantir, in which engineers embed inside the customer's team and ship working software as the means of consulting. The deliverable is a system in production and a team that can run it — not a recommendations deck.</p>
+        </div>
+        <div class="kc-faq-item">
+          <h3 class="kc-faq-q">How is an FDE embed different from staff augmentation?</h3>
+          <p class="kc-faq-a">A contractor adds hands; an FDE embed transfers capability. Every pull request is a teaching artifact and every review a transfer of taste, with explicit exit criteria: your team's velocity holds after I rotate out. I wrote more on this in <a href="/ideas/the-fde-mindset">The FDE mindset</a>.</p>
+        </div>
+        <div class="kc-faq-item">
+          <h3 class="kc-faq-q">Is the embed remote or on-site?</h3>
+          <p class="kc-faq-a">Wherever your team works. The embed runs inside your repos, standups, and incident channel, which works fully remotely; on-site time is scoped per engagement when it genuinely helps. Either way, the first working change lands in production in week one.</p>
+        </div>
+      </div>
+
+      <div class="kc-detail-cta">
+        <div>
+          <h2>Need an FDE in the building?</h2>
+          <p>Tell me about the team and the system. I will tell you in one call whether an embed will pay for itself.</p>
+        </div>
+        <a class="kc-detail-cta-btn" href="mailto:kenny.chien@gmail.com">kenny.chien@gmail.com →</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="kc-footer">
+    <div class="kc-footer-inner">
+      <span class="kc-footer-logo">KENNY CHIEN<b class="kc-dot">.</b></span>
+      <span class="kc-footer-tag">Crafted for the agentic era.</span>
+      <span class="kc-footer-langs">ENGLISH · 简体中文 · 繁體中文</span>
+      <span class="kc-footer-rights">© 2026 Kenny Chien. All rights reserved.</span>
+    </div>
+  </footer>
+</body>
+</html>

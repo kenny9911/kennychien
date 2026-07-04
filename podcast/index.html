@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Agentic Hour, an Enterprise AI Podcast — Kenny Chien</title>
+  <meta name="description" content="The Agentic Hour is Kenny Chien's enterprise AI podcast — long-form conversations about agents in production, vibe coding, and agentic ontology.">
+  <link rel="canonical" href="https://kennychien.com/podcast">
+  <meta property="og:site_name" content="Kenny Chien">
+  <meta property="og:title" content="The Agentic Hour, an Enterprise AI Podcast — Kenny Chien">
+  <meta property="og:description" content="The Agentic Hour is Kenny Chien's enterprise AI podcast — long-form conversations about agents in production, vibe coding, and agentic ontology.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kennychien.com/podcast">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"PodcastSeries","@id":"https://kennychien.com/podcast#series","name":"The Agentic Hour","url":"https://kennychien.com/podcast","description":"A podcast about enterprise AI in the agentic era, hosted by enterprise AI consultant Kenny Chien. Conversations with the people building the agentic era — operators, researchers, and the occasional skeptic.","inLanguage":"en","author":{"@type":"Person","name":"Kenny Chien","url":"https://kennychien.com","jobTitle":"Enterprise AI Consultant"}},{"@type":"ItemList","name":"The Agentic Hour — latest episodes","itemListOrder":"https://schema.org/ItemListOrderDescending","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"PodcastEpisode","name":"What enterprises get wrong about agents","episodeNumber":14,"duration":"PT42M","inLanguage":"en","partOfSeries":{"@id":"https://kennychien.com/podcast#series"}}},{"@type":"ListItem","position":2,"item":{"@type":"PodcastEpisode","name":"Vibe coding in regulated industries","episodeNumber":13,"duration":"PT48M","inLanguage":"en","partOfSeries":{"@id":"https://kennychien.com/podcast#series"}}},{"@type":"ListItem","position":3,"item":{"@type":"PodcastEpisode","name":"Ontology before automation","episodeNumber":12,"duration":"PT39M","inLanguage":"en","partOfSeries":{"@id":"https://kennychien.com/podcast#series"}}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Kenny Chien","item":"https://kennychien.com/"},{"@type":"ListItem","position":2,"name":"Podcast","item":"https://kennychien.com/podcast"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is The Agentic Hour about?","acceptedAnswer":{"@type":"Answer","text":"The Agentic Hour is a podcast about enterprise AI in the agentic era, hosted by enterprise AI consultant Kenny Chien. Each episode is a long-form conversation with an operator, researcher, or skeptic about agents in production — the architecture, the ontology, the failures, and the taste it takes to ship well."}},{"@type":"Question","name":"How long are episodes of The Agentic Hour?","acceptedAnswer":{"@type":"Answer","text":"Recent episodes of The Agentic Hour run between 39 and 48 minutes — long enough for a real argument, short enough for a commute. Episodes are recorded and rolling out now."}},{"@type":"Question","name":"How can I be a guest on The Agentic Hour?","acceptedAnswer":{"@type":"Answer","text":"Email kenny.chien@gmail.com with a short pitch: who you are, what you have built or studied, and the one claim you are willing to defend for an hour. Practitioners with production stories get priority over vendors with product announcements."}},{"@type":"Question","name":"Where can I listen to The Agentic Hour?","acceptedAnswer":{"@type":"Answer","text":"Public platform links are rolling out now and are not live on this page yet. To hear episodes as soon as they land, email kenny.chien@gmail.com with the subject line The Agentic Hour and you will be notified when they drop."}}]}]}</script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23161512'/%3E%3Ccircle cx='32' cy='32' r='17' fill='%23DF4A1E'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    /* /podcast — page-specific styles (design-system tokens from /assets/styles.css) */
+    .kc-crumb { font-family: var(--fm); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.7; margin: 0; }
+    .kc-crumb a { color: inherit; text-decoration: none; }
+    .kc-crumb a:hover { color: var(--verm); }
+    .kc-pod-page .kc-detail-metarow { margin-top: 32px; }
+
+    .kc-pod-hero { margin-top: 54px; border-top: 2px solid var(--ink); padding-top: 44px; }
+    .kc-pod-intro p { margin: 0 0 20px; font-size: 17px; line-height: 1.75; text-wrap: pretty; }
+    .kc-pod-intro p:last-child { margin-bottom: 0; }
+    .kc-pod-intro a, .kc-faq a, .kc-read a, .kc-guest a {
+      color: inherit; text-decoration: underline; text-decoration-color: var(--verm); text-underline-offset: 3px;
+    }
+    .kc-pod-intro a:hover, .kc-faq a:hover, .kc-read a:hover, .kc-guest a:hover { color: var(--verm); }
+
+    /* Episode grid — YouTube-style cards, CSS-drawn thumbnails */
+    .kc-epi-note { font-family: var(--fm); font-size: 10.5px; letter-spacing: 0.14em; opacity: 0.65; margin: 20px 0 28px; }
+    .kc-epi-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+    .kc-epi-card { border: 1px solid var(--ink); background: var(--card); display: flex; flex-direction: column; }
+    .kc-epi-thumb { position: relative; aspect-ratio: 16 / 9; background: var(--ink); border-bottom: 1px solid var(--ink); overflow: hidden; }
+    .kc-epi-show { position: absolute; left: 16px; top: 13px; font-family: var(--fm); font-size: 8.5px; letter-spacing: 0.18em; color: var(--paper); opacity: 0.6; }
+    .kc-epi-num { position: absolute; left: 14px; bottom: 6px; font-family: var(--fm); font-weight: 500; font-size: clamp(46px, 4.4vw, 58px); line-height: 1.1; color: var(--paper); letter-spacing: 0.02em; }
+    .kc-epi-ring { position: absolute; left: 62%; top: 50%; transform: translate(-50%, -50%); width: 88px; height: 88px; border: 1px dashed rgba(242, 238, 227, 0.4); border-radius: 50%; }
+    .kc-epi-playbtn { position: absolute; left: 62%; top: 50%; transform: translate(-50%, -50%); width: 56px; height: 56px; border-radius: 50%; background: var(--verm); color: var(--ink); display: flex; align-items: center; justify-content: center; font-size: 15px; transition: transform 0.15s ease; }
+    .kc-epi-card:hover .kc-epi-playbtn { transform: translate(-50%, -50%) scale(1.08); }
+    .kc-epi-badge { position: absolute; right: 10px; bottom: 10px; font-family: var(--fm); font-size: 9.5px; letter-spacing: 0.1em; background: var(--paper); color: var(--ink); padding: 3px 7px; }
+    .kc-epi-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .kc-epi-t { font-family: var(--fd); font-weight: 800; font-size: 20px; line-height: 1.22; margin: 0; text-wrap: balance; }
+    .kc-epi-m { font-family: var(--fm); font-size: 10px; letter-spacing: 0.14em; opacity: 0.65; margin: auto 0 0; }
+    .kc-read { margin: 30px 0 0; font-size: 15px; line-height: 1.75; opacity: 0.85; max-width: 860px; text-wrap: pretty; }
+    .kc-read-k { font-family: var(--fm); font-size: 10px; letter-spacing: 0.14em; color: var(--verm); }
+
+    /* Listen & subscribe row */
+    .kc-listen { display: grid; grid-template-columns: minmax(0, 1.6fr) auto; gap: 32px 44px; align-items: center; border: 1px solid var(--ink); background: var(--card); padding: 36px 40px; margin-top: 28px; }
+    .kc-listen p { margin: 0; font-size: 16px; line-height: 1.7; text-wrap: pretty; }
+    .kc-listen .kc-listen-note { margin-top: 14px; font-family: var(--fm); font-size: 10px; letter-spacing: 0.14em; opacity: 0.6; }
+    .kc-listen-btn { justify-self: end; white-space: nowrap; }
+
+    /* Pitch a guest */
+    .kc-guest p { margin: 22px 0 0; font-size: 17px; line-height: 1.75; max-width: 860px; text-wrap: pretty; }
+    .kc-guest .kc-pod-cta { margin-top: 22px; }
+
+    /* FAQ */
+    .kc-faq { margin-top: 26px; }
+    .kc-faq-item { border-top: 1px solid var(--hair); padding: 24px 4px; }
+    .kc-faq-q { font-family: var(--fd); font-weight: 800; font-size: 19px; margin: 0; }
+    .kc-faq-a { margin: 10px 0 0; font-size: 15.5px; line-height: 1.7; opacity: 0.85; max-width: 900px; text-wrap: pretty; }
+
+    @media (max-width: 1080px) {
+      .kc-epi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .kc-listen { grid-template-columns: minmax(0, 1fr); }
+      .kc-listen-btn { justify-self: start; }
+    }
+    @media (max-width: 680px) {
+      .kc-epi-grid { grid-template-columns: minmax(0, 1fr); }
+      .kc-listen { padding: 26px 22px; }
+      .kc-pod-hero { padding-top: 32px; margin-top: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="kc-nav">
+    <a class="kc-logo" href="/">KENNY CHIEN<b>.</b></a>
+    <div class="kc-nav-links">
+      <a class="kc-nav-link" href="/#about">About</a>
+      <a class="kc-nav-link" href="/consulting">Consulting</a>
+      <a class="kc-nav-link" href="/products">Products</a>
+      <a class="kc-nav-link" href="/coaching">Coaching</a>
+      <a class="kc-nav-link" href="/ideas">Ideas</a>
+      <a class="kc-nav-link" href="/podcast">Podcast</a>
+      <a class="kc-nav-link" href="/blog">Blog</a>
+    </div>
+    <a class="kc-nav-cta" href="/#contact">Get in touch</a>
+  </nav>
+
+  <main>
+    <article class="kc-detail kc-pod-page">
+      <p class="kc-crumb"><a href="/">KENNY CHIEN</a> / PODCAST</p>
+
+      <div class="kc-detail-metarow">
+        <span class="kc-detail-idx">/06</span>
+        <span class="kc-detail-meta">PODCAST · HOSTED BY KENNY CHIEN · NEW EPISODES EVERY OTHER TUESDAY</span>
+      </div>
+      <h1 class="kc-detail-title">The Agentic Hour</h1>
+      <p class="kc-detail-sub">Conversations with the people building the agentic era — operators, researchers, and the occasional skeptic.</p>
+
+      <div class="kc-pod-hero kc-pod-grid">
+        <div class="kc-pod-card">
+          <span class="kc-pod-label">PODCAST — HOSTED BY KENNY CHIEN</span>
+          <div class="kc-pod-title" aria-hidden="true">The<br>Agentic<br>Hour</div>
+          <div class="kc-pod-foot">
+            <span class="kc-pod-sched">EVERY OTHER TUESDAY</span>
+            <div class="kc-pod-play" aria-hidden="true">▶</div>
+          </div>
+        </div>
+        <div class="kc-pod-intro">
+          <p>The Agentic Hour is a podcast about enterprise AI in the agentic era, hosted by enterprise AI consultant Kenny Chien. Every other Tuesday, I sit down with an operator, researcher, or skeptic and push past the demo reel to what actually happens when agents meet production.</p>
+          <p>The show covers the same territory as my consulting and writing: agents in production, <a href="/coaching/vibe-coding-bootcamp">vibe coding</a> under real constraints, <a href="/consulting/agentic-ontology">agentic architecture and ontology</a>, and forward deployed engineering (FDE). If you prefer the arguments in written form, start with the essays in <a href="/ideas">Ideas</a>.</p>
+        </div>
+      </div>
+
+      <div class="kc-pull"><p>"The best conversations about agents start where the demo ends. That is where the show starts too."</p></div>
+
+      <div class="kc-detail-h"><i></i><h2>Latest episodes</h2></div>
+      <p class="kc-epi-note">RECORDED · PLATFORM LINKS ROLLING OUT — SEE LISTEN &amp; SUBSCRIBE BELOW</p>
+
+      <!-- ==================================================================
+           EPISODE LINKS — placeholder state (2026-07-04)
+           No public platform or episode URLs exist yet, so each episode is a
+           non-clickable <article>. When an episode goes public:
+             1. Wrap its <article class="kc-epi-card"> in
+                <a class="kc-epi-link" href="{public episode URL}">…</a>
+                and add to the <style> block:
+                .kc-epi-link { color: inherit; text-decoration: none; display: block; }
+             2. Add "url": "{public episode URL}" to the matching
+                PodcastEpisode node in the JSON-LD @graph in <head>.
+             3. Replace the note in the "Listen & subscribe" row with real
+                platform links (Apple Podcasts / Spotify / YouTube).
+           ================================================================== -->
+      <div class="kc-epi-grid">
+        <article class="kc-epi-card">
+          <div class="kc-epi-thumb" aria-hidden="true">
+            <span class="kc-epi-show">THE AGENTIC HOUR</span>
+            <span class="kc-epi-num">014</span>
+            <span class="kc-epi-ring"></span>
+            <span class="kc-epi-playbtn">▶</span>
+            <span class="kc-epi-badge">42 MIN</span>
+          </div>
+          <div class="kc-epi-body">
+            <h3 class="kc-epi-t">What enterprises get wrong about agents</h3>
+            <p class="kc-epi-m">EP 014 · 42 MIN</p>
+          </div>
+        </article>
+        <article class="kc-epi-card">
+          <div class="kc-epi-thumb" aria-hidden="true">
+            <span class="kc-epi-show">THE AGENTIC HOUR</span>
+            <span class="kc-epi-num">013</span>
+            <span class="kc-epi-ring"></span>
+            <span class="kc-epi-playbtn">▶</span>
+            <span class="kc-epi-badge">48 MIN</span>
+          </div>
+          <div class="kc-epi-body">
+            <h3 class="kc-epi-t">Vibe coding in regulated industries</h3>
+            <p class="kc-epi-m">EP 013 · 48 MIN</p>
+          </div>
+        </article>
+        <article class="kc-epi-card">
+          <div class="kc-epi-thumb" aria-hidden="true">
+            <span class="kc-epi-show">THE AGENTIC HOUR</span>
+            <span class="kc-epi-num">012</span>
+            <span class="kc-epi-ring"></span>
+            <span class="kc-epi-playbtn">▶</span>
+            <span class="kc-epi-badge">39 MIN</span>
+          </div>
+          <div class="kc-epi-body">
+            <h3 class="kc-epi-t">Ontology before automation</h3>
+            <p class="kc-epi-m">EP 012 · 39 MIN</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="kc-read"><span class="kc-read-k">READ ALONGSIDE — </span> EP 014 pairs with the <a href="/consulting/ai-application-launch">AI Application Launch</a> engagement, EP 013 with the <a href="/coaching/vibe-coding-bootcamp">Vibe Coding Bootcamp</a>, and EP 012 with the essay <a href="/ideas/ontology-is-the-new-schema">"Ontology is the new schema"</a>.</p>
+
+      <div class="kc-detail-h"><i></i><h2>Listen &amp; subscribe</h2></div>
+      <div class="kc-listen">
+        <div>
+          <p>The first episodes are recorded and rolling out now. There are no public platform links on this page yet — when the feed goes live on Apple Podcasts, Spotify, and YouTube, this is where you will find it. Until then, one email puts you on the drop list.</p>
+          <p class="kc-listen-note">PLATFORM LINKS WILL APPEAR HERE AS EPISODES GO PUBLIC.</p>
+        </div>
+        <a class="kc-btn-primary kc-listen-btn" href="mailto:kenny.chien@gmail.com?subject=The%20Agentic%20Hour">Get notified when episodes drop</a>
+      </div>
+
+      <section class="kc-guest">
+        <div class="kc-detail-h"><i></i><h2>Pitch a guest</h2></div>
+        <p>I book guests the way I take clients: on substance. If you operate agentic systems inside a real enterprise, research the parts everyone else hand-waves, or think the whole agent wave is oversold — I want that conversation on tape. Send three sentences: who you are, what you have shipped or studied, and the one claim you are willing to defend for an hour. Consulting, coaching, and speaking inquiries go through the <a href="/#contact">contact page</a>.</p>
+        <a class="kc-pod-cta" href="mailto:kenny.chien@gmail.com?subject=The%20Agentic%20Hour%20guest%20pitch">Pitch a guest →</a>
+      </section>
+
+      <section>
+        <div class="kc-detail-h"><i></i><h2>Frequently asked questions</h2></div>
+        <div class="kc-faq">
+          <div class="kc-faq-item">
+            <h3 class="kc-faq-q">What is The Agentic Hour about?</h3>
+            <p class="kc-faq-a">The Agentic Hour is a podcast about enterprise AI in the agentic era, hosted by enterprise AI consultant Kenny Chien. Each episode is a long-form conversation with an operator, researcher, or skeptic about agents in production — the architecture, the <a href="/consulting/agentic-ontology">ontology</a>, the failures, and the taste it takes to ship well.</p>
+          </div>
+          <div class="kc-faq-item">
+            <h3 class="kc-faq-q">How often do new episodes come out?</h3>
+            <p class="kc-faq-a">New episodes of The Agentic Hour are released every other Tuesday. Recent episodes run between 39 and 48 minutes — long enough for a real argument, short enough for a commute.</p>
+          </div>
+          <div class="kc-faq-item">
+            <h3 class="kc-faq-q">How can I be a guest on The Agentic Hour?</h3>
+            <p class="kc-faq-a">Email <a href="mailto:kenny.chien@gmail.com?subject=The%20Agentic%20Hour%20guest%20pitch">kenny.chien@gmail.com</a> with a short pitch: who you are, what you have built or studied, and the one claim you are willing to defend for an hour. Practitioners with production stories get priority over vendors with product announcements.</p>
+          </div>
+          <div class="kc-faq-item">
+            <h3 class="kc-faq-q">Where can I listen to The Agentic Hour?</h3>
+            <p class="kc-faq-a">Public platform links are rolling out now and are not live on this page yet. To hear episodes as soon as they land, email <a href="mailto:kenny.chien@gmail.com?subject=The%20Agentic%20Hour">kenny.chien@gmail.com</a> with the subject line The Agentic Hour and you will be notified when they drop.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="kc-detail-cta">
+        <div>
+          <h2>Want in on the conversation?</h2>
+          <p>Episode drops, a guest pitch, or a topic the show should argue about — one email reaches me, and I read all of it.</p>
+        </div>
+        <a class="kc-detail-cta-btn" href="mailto:kenny.chien@gmail.com">kenny.chien@gmail.com →</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="kc-footer">
+    <div class="kc-footer-inner">
+      <span class="kc-footer-logo">KENNY CHIEN<b class="kc-dot">.</b></span>
+      <span class="kc-footer-tag">Crafted for the agentic era.</span>
+      <span class="kc-footer-langs">ENGLISH · 简体中文 · 繁體中文</span>
+      <span class="kc-footer-rights">© 2026 Kenny Chien. All rights reserved.</span>
+    </div>
+  </footer>
+</body>
+</html>

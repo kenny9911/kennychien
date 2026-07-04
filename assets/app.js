@@ -129,8 +129,8 @@
   }
 
   function consultingHtml() {
-    var rows = t().services.map(function (sv, i) {
-      return '<a class="kc-svc-row" href="#/consulting/' + KC.PAGEKEYS[i] + '">' +
+    var rows = t().services.map(function (sv) {
+      return '<a class="kc-svc-row" href="' + esc(sv.url) + '">' +
         '<span class="kc-svc-n">' + esc(sv.n) + '</span>' +
         '<h3 class="kc-svc-t">' + esc(sv.t) + '</h3>' +
         '<p class="kc-svc-d">' + esc(sv.d) + '</p>' +
@@ -147,7 +147,7 @@
   function productsHtml() {
     var cards = t().products.map(function (pr, i) {
       var sh = KC.SHAPES[i % KC.SHAPES.length];
-      return '<article class="kc-prod-card">' +
+      return '<a class="kc-prod-card" href="' + esc(pr.url) + '">' +
         '<div class="kc-prod-head">' +
           '<div class="kc-prod-shape" style="background:' + sh.sBg + ';border-radius:' + sh.sRad + ';border:' + sh.sBrd + '"></div>' +
           '<span class="kc-prod-tag">' + esc(pr.tag) + '</span>' +
@@ -155,7 +155,7 @@
         '<h3 class="kc-prod-t">' + esc(pr.t) + '</h3>' +
         '<p class="kc-prod-d">' + esc(pr.d) + '</p>' +
         '<span class="kc-prod-cta">' + esc(pr.cta) + ' →</span>' +
-      '</article>';
+      '</a>';
     }).join('');
     return '<section id="products" class="kc-section">' +
       secHead('/03', t().prodTitle, t().prodKicker, 'kc-sechead--mb44') +
@@ -169,7 +169,7 @@
         '<span class="kc-coach-m">' + esc(co.m) + '</span>' +
         '<h3 class="kc-coach-t">' + esc(co.t) + '</h3>' +
         '<p class="kc-coach-d">' + esc(co.d) + '</p>' +
-        '<a class="kc-coach-cta" href="#contact" data-section-link>' + esc(co.cta) + ' →</a>' +
+        '<a class="kc-coach-cta" href="' + esc(co.url) + '">' + esc(co.cta) + ' →</a>' +
       '</div>';
     }).join('');
     return '<section id="coaching" class="kc-band">' +
@@ -182,11 +182,11 @@
 
   function ideasHtml() {
     var rows = t().ideas.map(function (idea, i) {
-      return '<div class="kc-idea-row">' +
+      return '<a class="kc-idea-row" href="' + esc(idea.url) + '">' +
         '<span class="kc-idea-n">0' + (i + 1) + '</span>' +
         '<h3 class="kc-idea-t">' + esc(idea.t) + '</h3>' +
         '<p class="kc-idea-d">' + esc(idea.d) + '</p>' +
-      '</div>';
+      '</a>';
     }).join('');
     return '<section id="ideas" class="kc-section kc-section--padtop">' +
       secHead('/05', t().ideasTitle, t().ideasKicker) +
@@ -196,12 +196,12 @@
 
   function podcastHtml() {
     var eps = t().episodes.map(function (ep) {
-      return '<div class="kc-ep-row">' +
+      return '<a class="kc-ep-row" href="/podcast">' +
         '<span class="kc-ep-n">' + esc(ep.n) + '</span>' +
         '<h4 class="kc-ep-t">' + esc(ep.t) + '</h4>' +
         '<span class="kc-ep-m">' + esc(ep.m) + '</span>' +
         '<span class="kc-ep-play">▶</span>' +
-      '</div>';
+      '</a>';
     }).join('');
     return '<section id="podcast" class="kc-section">' +
       secHead('/06', t().podTitle, t().podKicker, 'kc-sechead--mb48') +
@@ -214,7 +214,7 @@
         '<div>' +
           '<p class="kc-pod-sub">' + esc(t().podSub) + '</p>' +
           eps +
-          '<a class="kc-pod-cta" href="#podcast">' + esc(t().podCta) + ' →</a>' +
+          '<a class="kc-pod-cta" href="/podcast">' + esc(t().podCta) + ' →</a>' +
         '</div>' +
       '</div>' +
     '</section>';
@@ -222,11 +222,11 @@
 
   function blogHtml() {
     var cards = t().posts.map(function (po) {
-      return '<article class="kc-post-card">' +
+      return '<a class="kc-post-card" href="' + esc(po.url) + '">' +
         '<span class="kc-post-d">' + esc(po.d) + '</span>' +
         '<h3 class="kc-post-t">' + esc(po.t) + '</h3>' +
         '<span class="kc-post-arrow">→</span>' +
-      '</article>';
+      '</a>';
     }).join('');
     return '<section id="blog" class="kc-section kc-section--blog">' +
       secHead('/07', t().blogTitle, t().blogKicker, 'kc-sechead--mb44') +

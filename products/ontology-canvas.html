@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ontology Canvas: An Agent-Readable Worksheet — Kenny Chien</title>
+  <meta name="description" content="The Ontology Canvas is a structured worksheet system for mapping your enterprise into an agent-readable ontology of entities, actions, and permissions.">
+  <link rel="canonical" href="https://kennychien.com/products/ontology-canvas">
+  <meta property="og:site_name" content="Kenny Chien">
+  <meta property="og:title" content="Ontology Canvas: An Agent-Readable Worksheet — Kenny Chien">
+  <meta property="og:description" content="The Ontology Canvas is a structured worksheet system for mapping your enterprise into an agent-readable ontology of entities, actions, and permissions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kennychien.com/products/ontology-canvas">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Product","name":"Ontology Canvas","url":"https://kennychien.com/products/ontology-canvas","description":"A structured worksheet system for mapping an enterprise into an agent-readable ontology: entity maps, action catalogues, and permission grids.","brand":{"@type":"Person","name":"Kenny Chien","url":"https://kennychien.com","jobTitle":"Enterprise AI Consultant"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://kennychien.com/"},{"@type":"ListItem","position":2,"name":"Products","item":"https://kennychien.com/products"},{"@type":"ListItem","position":3,"name":"Ontology Canvas","item":"https://kennychien.com/products/ontology-canvas"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a consulting engagement to use the Ontology Canvas?","acceptedAnswer":{"@type":"Answer","text":"No. The canvas is the self-serve version of the method I use in agentic architecture and ontology engagements. An engagement gets you the method with me in the room; the canvas gets you the structure to run it yourself."}},{"@type":"Question","name":"Is the Ontology Canvas a physical product or a digital one?","acceptedAnswer":{"@type":"Answer","text":"It is a worksheet system designed to work both ways: printable canvases for workshop walls and digital templates your architects keep versioned alongside the systems they describe. The output — your ontology draft — is meant to live in your repository, not in a drawer."}},{"@type":"Question","name":"How does the canvas relate to the Ontology Generator?","acceptedAnswer":{"@type":"Answer","text":"The canvas is human-led: it structures how your team articulates entities, actions, and permissions. The Ontology Generator is machine-led: it drafts a starting ontology from your systems and documents. They meet in the middle — generate a draft, then use the canvas to interrogate and refine it."}}]}]}</script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23161512'/%3E%3Ccircle cx='32' cy='32' r='17' fill='%23DF4A1E'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400;1,6..72,500&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .kc-crumb { margin: 0 0 8px; font-family: var(--fm); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.7; }
+    .kc-crumb a { color: inherit; text-decoration: none; }
+    .kc-crumb a:hover { color: var(--verm); }
+    .kc-hero-shape { width: 62px; height: 62px; flex: none; margin-left: auto; align-self: center; }
+    .kc-status { margin-top: 26px; border: 1px solid var(--ink); background: var(--card); padding: 28px 30px; display: flex; gap: 20px; align-items: baseline; flex-wrap: wrap; }
+    .kc-status-tag { font-family: var(--fm); font-size: 10px; letter-spacing: 0.14em; background: var(--verm); color: var(--paper); padding: 5px 10px; white-space: nowrap; }
+    .kc-status p { margin: 0; font-size: 15.5px; line-height: 1.65; flex: 1; min-width: 240px; text-wrap: pretty; }
+    .kc-status a { color: var(--verm); }
+    .kc-faq { margin-top: 12px; }
+    .kc-faq-item { border-top: 1px solid var(--hair); padding: 26px 4px; }
+    .kc-faq-item h3 { font-family: var(--fd); font-weight: 900; font-size: 19px; margin: 0; line-height: 1.3; }
+    .kc-faq-item p { margin: 12px 0 0; font-size: 15.5px; line-height: 1.7; opacity: 0.85; max-width: 840px; text-wrap: pretty; }
+    .kc-faq-item a { color: var(--verm); }
+    .kc-rel { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .kc-rel a { font-family: var(--fm); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--ink); padding: 11px 15px; text-decoration: none; }
+    .kc-rel a:hover { background: var(--ink); color: var(--paper); }
+  </style>
+</head>
+<body>
+  <nav class="kc-nav">
+    <a class="kc-logo" href="/">KENNY CHIEN<b>.</b></a>
+    <div class="kc-nav-links">
+      <a class="kc-nav-link" href="/#about">About</a>
+      <a class="kc-nav-link" href="/consulting">Consulting</a>
+      <a class="kc-nav-link" href="/products">Products</a>
+      <a class="kc-nav-link" href="/coaching">Coaching</a>
+      <a class="kc-nav-link" href="/ideas">Ideas</a>
+      <a class="kc-nav-link" href="/podcast">Podcast</a>
+      <a class="kc-nav-link" href="/blog">Blog</a>
+    </div>
+    <a class="kc-nav-cta" href="/#contact">Get in touch</a>
+  </nav>
+
+  <main>
+    <article class="kc-detail">
+      <p class="kc-crumb"><a href="/">KENNY CHIEN</a> / <a href="/products">PRODUCTS</a> / ONTOLOGY CANVAS</p>
+
+      <div class="kc-detail-metarow">
+        <span class="kc-detail-idx">/03.2</span>
+        <span class="kc-detail-meta">TOOLKIT · IN DEVELOPMENT · EARLY ACCESS BY REQUEST</span>
+        <div class="kc-hero-shape" style="background:#161512;border-radius:0;border:none"></div>
+      </div>
+      <h1 class="kc-detail-title">Ontology Canvas</h1>
+      <p class="kc-detail-sub">A structured worksheet system for mapping your enterprise into an agent-readable ontology.</p>
+
+      <div class="kc-detail-h" style="margin-top:64px"><i></i><h2>What is the Ontology Canvas?</h2></div>
+      <section class="kc-detail-intro" style="margin-top:28px;border-top:none;padding-top:0">
+        <p>The Ontology Canvas is a structured worksheet system for mapping an enterprise into an agent-readable ontology. It walks a team through naming its entities, the actions that may be performed on them, and the permissions that govern who — human or agent — may perform which action, under which conditions. The output is a first ontology draft your architects can formalize.</p>
+        <p>The canvas packages the excavation method from my <a href="/consulting/agentic-ontology" style="color:var(--verm)">agentic architecture and ontology</a> engagements into a form a team can run on its own: a sequence of worksheets, each with a sharp question, filled in by the people who actually operate the business. Agents do not fail for lack of intelligence. They fail because nobody told them what the business is. The canvas is how you tell them.</p>
+      </section>
+
+      <div class="kc-pull">
+        <p>Databases described your data. Ontologies describe your business. The canvas is where that description gets written down.</p>
+      </div>
+
+      <div class="kc-detail-h"><i></i><h2>What's inside</h2></div>
+      <div class="kc-prin-grid">
+        <div class="kc-prin">
+          <span class="kc-prin-n">01</span>
+          <div>
+            <h3 class="kc-prin-t">Entity map</h3>
+            <p class="kc-prin-d">Worksheets for naming your core business objects, their relationships, and their state machines — derived from how work actually flows, not from the org chart or the database schema.</p>
+          </div>
+        </div>
+        <div class="kc-prin">
+          <span class="kc-prin-n">02</span>
+          <div>
+            <h3 class="kc-prin-t">Action catalogue</h3>
+            <p class="kc-prin-d">A template for the operations agents may one day invoke — each entry forcing you to state preconditions, side effects, cost, and reversibility before any agent is granted the capability.</p>
+          </div>
+        </div>
+        <div class="kc-prin">
+          <span class="kc-prin-n">03</span>
+          <div>
+            <h3 class="kc-prin-t">Permission grid</h3>
+            <p class="kc-prin-d">A matrix for deciding who may act as whom, on what, within which limits — turning "give the agent access" from a vague request into a precise, reviewable statement.</p>
+          </div>
+        </div>
+        <div class="kc-prin">
+          <span class="kc-prin-n">04</span>
+          <div>
+            <h3 class="kc-prin-t">Exception ledger</h3>
+            <p class="kc-prin-d">A worksheet dedicated to the workflows nobody documents — the overrides, the workarounds, the Friday-afternoon exceptions. These are what break agents in production, so the canvas hunts them first.</p>
+          </div>
+        </div>
+        <div class="kc-prin">
+          <span class="kc-prin-n">05</span>
+          <div>
+            <h3 class="kc-prin-t">Facilitation guide</h3>
+            <p class="kc-prin-d">How to run the canvas as a working session: who to put in the room, the order of the worksheets, and how to resolve the arguments — which are usually the most valuable output.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="kc-detail-h"><i></i><h2>Who it's for</h2></div>
+      <div class="kc-out-grid">
+        <div class="kc-out"><i>→</i><p>Architects and platform teams designing the layer between models and the business</p></div>
+        <div class="kc-out"><i>→</i><p>CTO and CAIO teams who want a shared, reviewable answer to "what may agents do here"</p></div>
+        <div class="kc-out"><i>→</i><p>Teams about to build their first agent who have not yet written down what it acts on</p></div>
+        <div class="kc-out"><i>→</i><p>Consultants and internal enablement teams who run ontology workshops of their own</p></div>
+      </div>
+
+      <div class="kc-detail-h"><i></i><h2>Status and availability</h2></div>
+      <div class="kc-status">
+        <span class="kc-status-tag">IN DEVELOPMENT</span>
+        <p>The Ontology Canvas is in development and available on request. The worksheets exist and are used in live engagements today; the packaged, self-serve edition is being refined. Email me with a sketch of your architecture and I will share the current version and how other teams are using it.</p>
+      </div>
+
+      <div class="kc-detail-h"><i></i><h2>Frequently asked questions</h2></div>
+      <div class="kc-faq">
+        <div class="kc-faq-item">
+          <h3>Do I need a consulting engagement to use the canvas?</h3>
+          <p>No. The canvas is the self-serve version of the method I use in <a href="/consulting/agentic-ontology">agentic architecture and ontology</a> engagements. An engagement gets you the method with me in the room; the canvas gets you the structure to run it yourself.</p>
+        </div>
+        <div class="kc-faq-item">
+          <h3>Is it a physical product or a digital one?</h3>
+          <p>It is a worksheet system designed to work both ways: printable canvases for workshop walls and digital templates your architects keep versioned alongside the systems they describe. The output — your ontology draft — is meant to live in your repository, not in a drawer.</p>
+        </div>
+        <div class="kc-faq-item">
+          <h3>How does the canvas relate to the Ontology Generator?</h3>
+          <p>The canvas is human-led: it structures how your team articulates entities, actions, and permissions. The <a href="/products/ontology-generator">Ontology Generator</a> is machine-led: it drafts a starting ontology from your systems and documents. They meet in the middle — generate a draft, then use the canvas to interrogate and refine it.</p>
+        </div>
+      </div>
+
+      <div class="kc-detail-h"><i></i><h2>Go deeper</h2></div>
+      <nav class="kc-rel" aria-label="Related pages">
+        <a href="/consulting/agentic-ontology">Consulting: Agentic Architecture &amp; Ontology →</a>
+        <a href="/ideas/ontology-is-the-new-schema">Essay: Ontology is the new schema →</a>
+        <a href="/products/ontology-generator">Ontology Generator →</a>
+        <a href="/products">All products →</a>
+      </nav>
+
+      <section class="kc-detail-cta">
+        <div>
+          <h2>Want to map your ontology?</h2>
+          <p>Tell me what your agents will need to act on — one paragraph is enough. I will send the current canvas and an honest note on whether it fits your situation.</p>
+        </div>
+        <a class="kc-detail-cta-btn" href="mailto:kenny.chien@gmail.com?subject=Ontology%20Canvas%20early%20access">kenny.chien@gmail.com →</a>
+      </section>
+    </article>
+  </main>
+
+  <footer class="kc-footer">
+    <div class="kc-footer-inner">
+      <span class="kc-footer-logo">KENNY CHIEN<b class="kc-dot">.</b></span>
+      <span class="kc-footer-tag">Crafted for the agentic era.</span>
+      <span class="kc-footer-langs">ENGLISH · 简体中文 · 繁體中文</span>
+      <span class="kc-footer-rights">© 2026 Kenny Chien. All rights reserved.</span>
+    </div>
+  </footer>
+</body>
+</html>

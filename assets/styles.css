@@ -182,6 +182,8 @@ a, button { -webkit-tap-highlight-color: transparent; }
 
 /* ---------- Products / Blog cards ---------- */
 .kc-grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+/* cards/rows rendered as anchors (real page links) keep their card styling */
+a.kc-prod-card, a.kc-idea-row, a.kc-post-card, a.kc-ep-row { color: inherit; text-decoration: none; }
 .kc-prod-card {
   border: 1px solid var(--ink); background: var(--card); padding: 30px;
   display: flex; flex-direction: column; gap: 18px; min-height: 330px; box-sizing: border-box;
@@ -204,7 +206,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .kc-sechead--dark { border-bottom: 1px solid var(--dkline); margin-bottom: 54px; }
 .kc-sechead--dark .kc-sectitle { color: var(--paper); }
 .kc-sechead--dark .kc-seckicker { opacity: 0.65; }
-.kc-coach-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.kc-coach-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .kc-coach-col { border-left: 1px solid var(--dkline); padding: 8px 30px; display: flex; flex-direction: column; gap: 16px; }
 .kc-coach-m { font-family: var(--fm); font-size: 10.5px; letter-spacing: 0.14em; color: var(--verm); }
 .kc-coach-t { font-family: var(--fd); font-weight: 900; font-size: 27px; margin: 0; text-transform: uppercase; line-height: 1.1; color: var(--paper); }
@@ -387,7 +389,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .kc-detail { padding: 110px 40px 90px; }
   .kc-about-grid { grid-template-columns: minmax(0, 1fr); gap: 44px; }
   .kc-grid3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .kc-coach-grid { grid-template-columns: minmax(0, 1fr); }
+  .kc-coach-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; }
   .kc-coach-col { border-left: none; border-top: 1px solid var(--dkline); padding: 26px 0; }
   .kc-pod-grid { grid-template-columns: minmax(0, 1fr); gap: 44px; }
   .kc-pod-card { max-width: 360px; width: 100%; }
@@ -415,6 +417,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .kc-section { padding: 0 22px 76px; }
   .kc-section--padtop { padding-top: 76px; }
   .kc-band-inner { padding: 70px 22px; }
+  .kc-coach-grid { grid-template-columns: minmax(0, 1fr); }
   .kc-contact-inner { padding: 90px 22px; }
   .kc-footer-inner { padding: 36px 22px; }
   .kc-detail { padding: 130px 22px 76px; }

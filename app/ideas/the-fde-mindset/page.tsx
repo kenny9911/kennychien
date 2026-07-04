@@ -1,0 +1,273 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
+import Breadcrumb from "@/components/Breadcrumb";
+import JsonLd from "@/components/JsonLd";
+import DetailCta from "@/components/DetailCta";
+import { PERSON, SITE_URL, URLS, breadcrumbLd } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "The FDE Mindset",
+  description:
+    "The FDE mindset: why the best consultants now ship code from inside the client's team. Forward deployed engineering, its Palantir lineage, and how to apply it.",
+  alternates: { canonical: "/ideas/the-fde-mindset" },
+  openGraph: {
+    title: "The FDE Mindset — Kenny Chien",
+    description:
+      "The FDE mindset: why the best consultants now ship code from inside the client's team. Forward deployed engineering, its Palantir lineage, and how to apply it.",
+    url: "/ideas/the-fde-mindset",
+    type: "article",
+  },
+};
+
+const graph = [
+  {
+    "@type": "Article",
+    headline: "The FDE mindset",
+    description:
+      "Why the best consultants now ship code from inside the building: forward deployed engineering (FDE), its Palantir lineage, and what it means for buying or delivering consulting.",
+    url: `${SITE_URL}${URLS.ideaFde}`,
+    datePublished: "2026-07-04",
+    inLanguage: "en",
+    author: PERSON,
+    isPartOf: {
+      "@type": "CollectionPage",
+      name: "Ideas",
+      url: `${SITE_URL}${URLS.ideas}`,
+    },
+  },
+  breadcrumbLd([
+    ["Home", "/"],
+    ["Ideas", URLS.ideas],
+    ["The FDE mindset", URLS.ideaFde],
+  ]),
+];
+
+export default function TheFdeMindsetPage() {
+  return (
+    <>
+      <style>{`
+    .kc-prose { max-width: 820px; }
+    .kc-prose p { font-family: var(--fs); font-size: 19px; line-height: 1.78; margin: 24px 0 0; text-wrap: pretty; }
+    .kc-prose a { color: inherit; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--verm); }
+    .kc-prose a:hover { color: var(--verm); }
+    .kc-onepara { max-width: 860px; box-sizing: border-box; border: 1px solid var(--ink); background: var(--card); padding: 32px 36px; margin-top: 26px; }
+    .kc-onepara p { font-family: var(--fs); font-size: 19.5px; line-height: 1.75; margin: 0; text-wrap: pretty; }
+    .kc-part { font-family: var(--fm); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--verm); margin: 90px 0 0; }
+    .kc-part + .kc-detail-h { margin-top: 20px; }
+    .kc-next { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 26px; max-width: 1000px; }
+    .kc-next-card { border: 1px solid var(--ink); background: var(--card); padding: 22px 24px; text-decoration: none; color: var(--ink); display: flex; flex-direction: column; gap: 9px; transition: transform .15s ease, box-shadow .15s ease; }
+    .kc-next-card:hover { transform: translate(-4px, -4px); box-shadow: 8px 8px 0 var(--ink); }
+    .kc-next-k { font-family: var(--fm); font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; opacity: .65; }
+    .kc-next-t { font-family: var(--fd); font-weight: 900; font-size: 19px; line-height: 1.2; margin: 0; }
+    .kc-next-d { font-size: 14px; line-height: 1.55; opacity: .75; margin: 0; }
+    @media (max-width: 680px) {
+      .kc-next { grid-template-columns: minmax(0, 1fr); }
+      .kc-onepara { padding: 24px 20px; }
+    }
+      `}</style>
+      <JsonLd graph={graph} />
+      <SiteNav />
+
+      <main>
+        <article className="kc-detail">
+          <Breadcrumb
+            items={[["KENNY CHIEN", "/"], ["IDEAS", URLS.ideas], ["THE FDE MINDSET"]]}
+          />
+
+          <div className="kc-detail-metarow">
+            <span className="kc-detail-idx">/05.3</span>
+            <span className="kc-detail-meta">ESSAY · 04 JULY 2026 · 4 MIN READ · KENNY CHIEN</span>
+          </div>
+          <h1 className="kc-detail-title">The FDE mindset</h1>
+          <p className="kc-detail-sub">
+            Why the best consultants now ship code from inside the building.
+          </p>
+
+          <div className="kc-pull">
+            <p>Slideware is a promise. A go-live is a fact.</p>
+          </div>
+
+          <div className="kc-detail-h">
+            <i></i>
+            <h2>In one paragraph</h2>
+          </div>
+          <div className="kc-onepara">
+            <p>
+              The FDE mindset — short for forward deployed engineering — holds that consulting on
+              software should be done by shipping software from inside the client's team, against
+              real data and real users. Instead of interviewing from the outside and delivering
+              recommendations, a forward deployed engineer embeds in the client's repos, standups,
+              and on-call rotation, and ships working systems as the medium of advice. The
+              deliverable is not a deck; it is a production go-live plus a team that can sustain
+              it. Palantir built its delivery model on this practice. The agentic era is making it
+              the default for any AI work that intends to survive contact with production.
+            </p>
+          </div>
+
+          <p className="kc-part">The argument</p>
+          <div className="kc-detail-h">
+            <i></i>
+            <h2>Advice from outside does not compile</h2>
+          </div>
+          <div className="kc-prose">
+            <p>
+              The classic consulting model separates thinking from doing: partners diagnose,
+              analysts model, a deck lands, and delivery is somebody else's problem. That
+              separation is survivable when the recommendation is an org chart. It is fatal when
+              the recommendation is software.
+            </p>
+            <p>
+              In software, the decisive facts are only visible from inside. The data is dirtier
+              than any interview reveals. The permission system nobody documented is the real
+              architecture. The workflow's unwritten exceptions are where the value hides — and
+              where the agents break. A recommendation written from outside the building encodes
+              none of this. It compiles in the boardroom and fails in the repo.
+            </p>
+          </div>
+
+          <div className="kc-detail-h">
+            <i></i>
+            <h2>The Palantir lineage</h2>
+          </div>
+          <div className="kc-prose">
+            <p>
+              Palantir turned this instinct into a delivery model: put engineers organizationally
+              and physically inside the customer, give them the real data and the real users, and
+              let working software be the consulting. Two details of that model matter more than
+              the folklore.
+            </p>
+            <p>
+              First, the two hats. Palantir split the role between engineers who bend the platform
+              to today's customer problem and engineers who feed what the field learns back into
+              the product. Every workaround becomes a roadmap item; the field is the research
+              department. Second, ontology-first integration: model the customer's business objects
+              and actions once, and every subsequent application inherits them. That lesson —
+              integrate meaning, not just data — is the subject of{" "}
+              <Link href={URLS.ideaSchema}>another essay on this site</Link>, and it came out of
+              forward deployment, not out of a lab.
+            </p>
+          </div>
+
+          <div className="kc-detail-h">
+            <i></i>
+            <h2>Shipping is the consulting</h2>
+          </div>
+          <div className="kc-prose">
+            <p>
+              When the deliverable is a go-live, honesty stops being a virtue and becomes a
+              constraint. You cannot hedge a deployment. Either the system works against real data
+              behind real permissions, or everyone can see that it does not. That enforcement is
+              the point.
+            </p>
+            <p>
+              Embedding also changes what the client keeps. A deck depreciates the day it is
+              delivered. An embed compounds: every pull request is a teaching artifact, every
+              review a transfer of taste, and the exit criterion is explicit — velocity holds after
+              the engineer is gone. The measure of a forward deployed engagement is not what was
+              shipped during it, but what the team ships after it.
+            </p>
+          </div>
+
+          <div className="kc-detail-h">
+            <i></i>
+            <h2>What it means for your team</h2>
+          </div>
+          <div className="kc-out-grid">
+            <div className="kc-out">
+              <i>→</i>
+              <p>
+                If you buy consulting: require working software in the first weeks, inside your own
+                repos — not a discovery phase that ends in a document.
+              </p>
+            </div>
+            <div className="kc-out">
+              <i>→</i>
+              <p>
+                Put consultants in your standups, your incident channel, and your code review. If
+                they resist, you are buying slideware.
+              </p>
+            </div>
+            <div className="kc-out">
+              <i>→</i>
+              <p>
+                Define exit criteria as retained capability: the team's shipping velocity after
+                handover, not the artifact count at handover.
+              </p>
+            </div>
+            <div className="kc-out">
+              <i>→</i>
+              <p>
+                If you run an internal platform team, rotate engineers into the business units as
+                internal FDEs. The field knowledge returns with them.
+              </p>
+            </div>
+          </div>
+
+          <div className="kc-detail-h">
+            <i></i>
+            <h2>The steelman</h2>
+          </div>
+          <div className="kc-prose">
+            <p>
+              The strongest counterargument: embedding does not scale. One engineer helps one team
+              at a time, the good ones are scarce, and the client risks building around a hero who
+              leaves. All true — and the objection misreads what is being scaled.
+            </p>
+            <p>
+              An embed does not scale like decks; it scales like training. The output is not
+              consulting hours but a team that permanently builds differently, plus conventions and
+              an integration layer the next team inherits. On dependence, the critique points the
+              wrong way: decks create dependence, because you need the firm back to interpret them.
+              A disciplined embed is designed to end — pairing from day one, rotating out of the
+              critical path, measured on what happens after departure. If velocity drops when the
+              FDE leaves, the engagement failed by its own definition.
+            </p>
+          </div>
+
+          <div className="kc-detail-h">
+            <i></i>
+            <h2>Where to go next</h2>
+          </div>
+          <div className="kc-next">
+            <Link className="kc-next-card" href={URLS.consultingFde}>
+              <span className="kc-next-k">Consulting</span>
+              <h3 className="kc-next-t">Forward Deployed Engineering</h3>
+              <p className="kc-next-d">
+                How I run embedded engagements: immerse, ship and pair, hand over.
+              </p>
+            </Link>
+            <Link className="kc-next-card" href={URLS.ideaSchema}>
+              <span className="kc-next-k">Related essay</span>
+              <h3 className="kc-next-t">Ontology is the new schema</h3>
+              <p className="kc-next-d">
+                The Palantir lesson that outlived the deployments: integrate meaning, not just
+                data.
+              </p>
+            </Link>
+            <Link className="kc-next-card" href={URLS.consulting}>
+              <span className="kc-next-k">Consulting</span>
+              <h3 className="kc-next-t">All engagements</h3>
+              <p className="kc-next-d">
+                Application launch, agentic ontology, and embedded delivery — three ways in.
+              </p>
+            </Link>
+            <Link className="kc-next-card" href={URLS.teamWorkshops}>
+              <span className="kc-next-k">Coaching</span>
+              <h3 className="kc-next-t">Team Workshops</h3>
+              <p className="kc-next-d">One- and two-day intensives on your codebase, not toy demos.</p>
+            </Link>
+          </div>
+
+          <DetailCta
+            title="Need an FDE in the building?"
+            body="Tell me about the team and the system. I will tell you in one call whether an embed will pay for itself."
+          />
+        </article>
+      </main>
+
+      <SiteFooter />
+    </>
+  );
+}
